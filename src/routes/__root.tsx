@@ -92,6 +92,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rebel Media HQ — Build Better Business Connections" },
+      { name: "twitter:description", content: "Rebel Media HQ is a B2B lead generation and growth partner helping businesses start better conversations." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bBuj0ho0D9ey2XQjDydudkqyu3e2/social-images/social-1785534229287-social-image.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/bBuj0ho0D9ey2XQjDydudkqyu3e2/social-images/social-1785534229287-social-image.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -104,7 +108,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
