@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  # Nitro's Netlify preset emits static assets here and the SSR /
+  # server-function handler into .netlify/functions-internal (auto-detected).
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NITRO_PRESET = "netlify"
+
+[dev]
+  command = "npm run dev"
+  targetPort = 8080
