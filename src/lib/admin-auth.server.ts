@@ -38,7 +38,9 @@ export async function issueToken(): Promise<string> {
 export async function verifyToken(token: string): Promise<boolean> {
   const parts = token.split(".");
   if (parts.length !== 3) return false;
-  const [role, expires, signature] = parts;
+  const role = parts[0] ?? "";
+  const expires = parts[1] ?? "";
+  const signature = parts[2] ?? "";
   if (role !== "admin") return false;
   const exp = Number(expires);
   if (!Number.isFinite(exp) || exp < Date.now()) return false;
