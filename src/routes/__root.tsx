@@ -77,16 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rebel Media HQ — Build Better Business Connections" },
+      {
+        name: "description",
+        content:
+          "Rebel Media HQ is a B2B lead generation and growth partner helping businesses start better conversations.",
+      },
+      { name: "author", content: "Rebel Media HQ" },
+      { property: "og:title", content: "Rebel Media HQ — Build Better Business Connections" },
+      {
+        property: "og:description",
+        content:
+          "Rebel Media HQ is a B2B lead generation and growth partner helping businesses start better conversations.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
