@@ -6,7 +6,7 @@ export function RebelLogo({ className = "h-10 w-10" }: { className?: string }) {
       src={logoAsset.url}
       alt="Rebel Media HQ logo"
       className={`${className} object-contain mix-blend-screen`}
-      style={{ filter: "invert(1) brightness(1.35) contrast(1.15)" }}
+      style={{ filter: "invert(1) contrast(1.6) brightness(1.25)" }}
       loading="eager"
     />
   );
