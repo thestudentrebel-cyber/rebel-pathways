@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useServerFn } from "@tanstack/react-start";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { submitEnquiry } from "@/lib/enquiries.functions";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 import { MagneticButton } from "./MagneticButton";
 import { Reveal, EASE } from "./motion-primitives";
 
@@ -27,6 +27,17 @@ const emptyForm = {
   requirement: "",
 };
 
+const enquirySchema = z.object({
+  full_name: z.string().trim().min(1).max(120),
+  company_name: z.string().trim().min(1).max(160),
+  email: z.string().trim().email().max(200),
+  phone: z.string().trim().max(50),
+  website: z.string().trim().max(200),
+  service_required: z.string().trim().max(80),
+  business_description: z.string().trim().max(2000),
+  requirement: z.string().trim().max(4000),
+});
+
 const fieldClass =
   "w-full rounded-xl border border-border bg-card/50 px-4 py-3.5 text-sm text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground/60 focus:border-primary";
 
@@ -50,7 +61,6 @@ function Field({
 }
 
 export function EnquirySection() {
-  const send = useServerFn(submitEnquiry);
   const [form, setForm] = useState(emptyForm);
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -63,14 +73,21 @@ export function EnquirySection() {
     setError(null);
     setStatus("sending");
     try {
-      const res = await send({ data: form });
-      if (res.ok) {
-        setStatus("done");
-        setForm(emptyForm);
-      } else {
-        setError(res.error);
-        setStatus("idle");
-      }
+      const values = enquirySchema.parse(form);
+      const { error: submissionError } = await supabase.from("enquiries").insert({
+        full_name: values.full_name,
+        company_name: values.company_name,
+        email: values.email,
+        phone: values.phone || null,
+        website: values.website || null,
+        service_required: values.service_required || null,
+        business_description: values.business_description || null,
+        requirement: values.requirement || null,
+      });
+      if (submissionError) throw submissionError;
+
+      setStatus("done");
+      setForm(emptyForm);
     } catch {
       setError("Something went wrong. Please try again.");
       setStatus("idle");
