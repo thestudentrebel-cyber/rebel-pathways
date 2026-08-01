@@ -14,7 +14,7 @@ export function RebelLogo({
   const src = LOGOS[variant];
   return (
     <img
-      src={asset.url}
+      src={src}
       alt="Rebel Media HQ logo"
       className={`${className} object-contain`}
       loading="eager"
