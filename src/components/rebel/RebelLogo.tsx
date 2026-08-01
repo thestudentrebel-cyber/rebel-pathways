@@ -1,13 +1,21 @@
-import logoAsset from "@/assets/rebel-logo.asset.json";
+import markAsset from "@/assets/rebel-mark.png.asset.json";
+import fullAsset from "@/assets/rebel-logo-full.png.asset.json";
 
-export function RebelLogo({ className = "h-10 w-10" }: { className?: string }) {
+export function RebelLogo({
+  className = "h-10 w-10",
+  variant = "mark",
+}: {
+  className?: string;
+  variant?: "mark" | "full";
+}) {
+  const asset = variant === "full" ? fullAsset : markAsset;
   return (
     <img
-      src={logoAsset.url}
+      src={asset.url}
       alt="Rebel Media HQ logo"
-      className={`${className} object-contain mix-blend-screen`}
-      style={{ filter: "invert(1) contrast(1.6) brightness(1.25)" }}
+      className={`${className} object-contain`}
       loading="eager"
+      decoding="async"
     />
   );
 }

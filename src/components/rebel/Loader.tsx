@@ -37,7 +37,7 @@ export function Loader({ onDone }: { onDone: () => void }) {
             animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
             transition={{ duration: 1, ease: EASE }}
           >
-            <RebelLogo className="h-24 w-24 sm:h-28 sm:w-28" />
+            <RebelLogo variant="full" className="h-28 w-28 sm:h-36 sm:w-36" />
           </motion.div>
 
           <motion.h1
