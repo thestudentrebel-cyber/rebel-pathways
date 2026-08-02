@@ -15,10 +15,18 @@ export const Route = createFileRoute("/admin/enquiries")({
   head: () => ({
     meta: [
       { title: "Rebel Admin — Enquiries" },
-      { name: "description", content: "Manage enquiries submitted to Rebel Media HQ." },
+      {
+        name: "description",
+        content:
+          "Internal dashboard for tracking Rebel Media HQ enquiries: search leads, update their status and remove handled B2B enquiry records.",
+      },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Rebel Admin — Enquiries" },
-      { property: "og:description", content: "Manage enquiries submitted to Rebel Media HQ." },
+      {
+        property: "og:description",
+        content:
+          "Internal dashboard for tracking Rebel Media HQ enquiries: search leads, update their status and remove handled B2B enquiry records.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
