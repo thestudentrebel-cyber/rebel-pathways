@@ -47,14 +47,14 @@ export function Footer() {
               Contact
             </h3>
             <a
-              href="mailto:hello@rebelmediahq.com"
+              href="mailto:connect@xplorevo.tech"
               className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              <Mail size={14} /> hello@rebelmediahq.com
+              <Mail size={14} /> connect@xplorevo.tech
             </a>
             <div className="mt-2 flex gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/rebel-media-hq/?viewAsMember=true"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -63,7 +63,7 @@ export function Footer() {
                 <Linkedin size={15} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/rebelmedia.hq/?hl=en"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
