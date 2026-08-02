@@ -11,10 +11,18 @@ export const Route = createFileRoute("/admin/")({
   head: () => ({
     meta: [
       { title: "Rebel Admin — Sign in" },
-      { name: "description", content: "Private administration area for Rebel Media HQ." },
+      {
+        name: "description",
+        content:
+          "Secure sign-in for the Rebel Media HQ admin area, where the team reviews and manages incoming B2B lead enquiries.",
+      },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Rebel Admin — Sign in" },
-      { property: "og:description", content: "Private administration area for Rebel Media HQ." },
+      {
+        property: "og:description",
+        content:
+          "Secure sign-in for the Rebel Media HQ admin area, where the team reviews and manages incoming B2B lead enquiries.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
