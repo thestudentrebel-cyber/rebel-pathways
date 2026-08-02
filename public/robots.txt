@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin
+
+Sitemap: https://rebel-connections-builder.lovable.app/sitemap.xml
